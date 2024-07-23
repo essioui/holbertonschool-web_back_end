@@ -1,5 +1,4 @@
 function cleanSet(set, startString) {
-
   if (typeof startString !== 'string') {
     return '';
   }
