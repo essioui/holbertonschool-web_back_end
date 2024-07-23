@@ -1,4 +1,4 @@
-function updateUniqueItems(map) {
+function updateUniqueItems(map){
 
   if (!(map instanceof Map)) {
 
@@ -17,7 +17,7 @@ function updateUniqueItems(map) {
   }
 
   return map;
-  
+
 }
 
 module.exports = updateUniqueItems;
