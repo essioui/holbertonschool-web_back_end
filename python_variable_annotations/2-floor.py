@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-import math
 """
 2-floor.py
 this module contains the `floor` function return integer
 """
+
+
+import math
 
 
 def floor(n: float) -> int:
