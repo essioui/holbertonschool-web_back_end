@@ -2,7 +2,7 @@
 import math
 """
 2-floor.py
-this module use library math for back integer number of float n
+this module contains the `floor` use library math for back integer number of float n
 """
 
 
