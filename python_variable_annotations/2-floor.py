@@ -5,6 +5,7 @@ import math
 this module use library math for back integer number of float n
 """
 
+
 def floor(n: float) -> int:
     """
     function floor has one argument n
