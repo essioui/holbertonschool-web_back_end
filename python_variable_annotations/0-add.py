@@ -2,7 +2,7 @@
 """
 0-add.py
 
-This module contains the `add` function that adds two decimal numbers and returns the result.
+This module contains the `add` function that adds a and b.
 """
 
 
