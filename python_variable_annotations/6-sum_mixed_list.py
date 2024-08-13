@@ -4,6 +4,7 @@ this module `sum_mixed_list` return list type float
 """
 
 
+from typing import List
 def sum_mixed_list(mxd_lst: list[int, float]) -> float:
     """
     function has list with two type
