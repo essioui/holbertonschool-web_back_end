@@ -4,6 +4,8 @@
 
 This module contains the `add` function that adds two decimal numbers and returns the result.
 """
+
+
 def add(a: float, b: float) -> float:
     """
     function add a type-annotated have two arguments
