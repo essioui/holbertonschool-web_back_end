@@ -10,7 +10,7 @@ from typing import List, Tuple, Sequence, Iterable
 def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
     """
     function has arg
-    lst: iterable and squence 
+    lst: iterable and squence
     return: squence and integer
     """
     return [(i, len(i)) for i in lst]
