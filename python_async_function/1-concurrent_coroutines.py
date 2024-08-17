@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-This module imports 'wait_random' from another file to display a list of wait times.
+This module import 'wait_random' from other file
 """
 
 from typing import List
