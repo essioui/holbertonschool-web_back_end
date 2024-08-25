@@ -1,3 +1,2 @@
-// Insert document in the collection school
-mongo my_db
-db.school.insertOne({name: "Holberton school"})
+// Insert document
+db.school.insert({name: "Holberton school"})
