@@ -65,8 +65,8 @@ const app = http.createServer((req, res) => {
         res.end(`This is the list of our students\n${output}`);
       })
       .catch((err) => {
-        res.writeHead(500, { 'Content-Type': 'text/plain' });
-        res.end(err.message);
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end(`This is the list of our students\n${err.message}`);
       });
   } else {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
@@ -78,5 +78,6 @@ const app = http.createServer((req, res) => {
 app.listen(1245, () => {
   console.log('Server listening at port 1245');
 });
+
 
 module.exports = app;
