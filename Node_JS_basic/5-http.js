@@ -2,7 +2,6 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-
 function countStudents(filePath) {
   return new Promise((resolve, reject) => {
     fs.readFile(filePath, 'utf-8', (err, data) => {
@@ -56,7 +55,6 @@ const app = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-    
     const databasePath = path.resolve(process.argv[2]);
 
     countStudents(databasePath)
@@ -74,10 +72,8 @@ const app = http.createServer((req, res) => {
   }
 });
 
-
 app.listen(1245, () => {
   console.log('Server listening at port 1245');
 });
-
 
 module.exports = app;
