@@ -32,13 +32,14 @@ export default class StudentsController {
       const students = await readDatabase(databaseFile);
 
       if (!students[major]) {
-        return res.status(404).json({ error: `No students found for major: ${major}` });
+        return res.status(404).json({ error: `Major not found in the database` });
       }
 
       const studentList = students[major].join(', ');
       return res.status(200).send(`List: ${studentList}`);
     } catch (error) {
-      return res.status(500).json({ error: 'Cannot load the database' });
+        console.error('Error reading database:', error);
+      return res.status(500).json({ error: 'Internal Server Error' });
     }
   }
 }
