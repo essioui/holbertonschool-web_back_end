@@ -27,7 +27,7 @@ export default class StudentsController {
     const validMajors = ['CS', 'SWE'];
 
     if (!validMajors.includes(major)) {
-      return res.status(400).json({ error: 'Major parameter is invalid' });
+      return res.status(500).json({ error: 'Major parameter is invalid' });
     }
 
     const databaseFile = process.argv[2];
