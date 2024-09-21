@@ -1,7 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 
-export default async function readDatabase(filePath) {
+export async function readDatabase(filePath) {
   try {
     const absolutePath = path.resolve(filePath);
     const data = await fs.readFile(absolutePath, 'utf-8');
