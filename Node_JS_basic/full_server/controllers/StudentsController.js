@@ -18,27 +18,30 @@ export default class StudentsController {
     }
   }
 
+
   static async getAllStudentsByMajor(req, res) {
     const { major } = req.params;
-
+  
+    
     if (!major || (major !== 'CS' && major !== 'SWE')) {
-        return res.status(400).json({ error: 'Major parameter must be CS or SWE' });
-      }
-
-
-    const databaseFile = process.argv[2];
-
+      return res.status(400).json({ error: 'Major parameter must be CS or SWE' });
+    }
+  
     try {
-      const students = await readDatabase(databaseFile);
-
+      const students = await readDatabase(process.argv[2]);
+  
+      
       if (!students[major]) {
-        return res.status(404).json({ error: `No students found for major: ${major}` });
+        return res.status(404).json({ error: 'Major not found in the database' });
       }
-
-      const studentList = students[major].join(', ');
-      return res.status(200).send(`List: ${studentList}`);
+  
+      
+      return res.status(200).json(students[major]);
     } catch (error) {
-      return res.status(500).json({ error: 'Cannot load the database' });
+        
+      console.error('Error reading database:', error);
+      return res.status(500).json({ error: 'Server error' });
     }
   }
+  
 }
