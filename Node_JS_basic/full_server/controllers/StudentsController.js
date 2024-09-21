@@ -11,6 +11,7 @@ export default class StudentsController {
       });
       res.status(200).send(responseText.trim());
     } catch (error) {
+      console.error('Error loading database:', error);
       res.status(500).send('Cannot load the database');
     }
   }
