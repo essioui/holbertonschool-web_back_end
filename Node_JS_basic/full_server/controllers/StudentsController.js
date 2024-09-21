@@ -1,8 +1,5 @@
 import { readDatabase } from '../utils';
 
-// const fs = require('fs');
-// const path = require('path');
-
 export default class StudentsController {
   static async getAllStudents(req, res) {
     const databaseFile = process.argv[2];
@@ -21,24 +18,25 @@ export default class StudentsController {
   static async getAllStudentsByMajor(req, res) {
     const { major } = req.params;
 
+    
     if (!major || (major !== 'CS' && major !== 'SWE')) {
-        return res.status(400).json({ error: 'Major parameter must be CS or SWE' });
-      }
-
+      return res.status(400).json({ error: 'Major parameter must be either CS or SWE' });
+    }
 
     const databaseFile = process.argv[2];
 
     try {
       const students = await readDatabase(databaseFile);
 
+      
       if (!students[major]) {
-        return res.status(404).json({ error: `Major not found in the database` });
+        return res.status(404).json({ error: `Major ${major} not found in the database` });
       }
 
       const studentList = students[major].join(', ');
       return res.status(200).send(`List: ${studentList}`);
     } catch (error) {
-        console.error('Error reading database:', error);
+      console.error('Error reading database:', error);
       return res.status(500).json({ error: 'Internal Server Error' });
     }
   }
